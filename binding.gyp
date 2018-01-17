@@ -5,16 +5,16 @@
 			"<!@(node ./lib/defines.js)",
 		],
 		"include_dirs" : [
-		  "-I/web/home/johnathan/opencv-3-static/include/opencv -I/web/home/johnathan/opencv-3-static/include",	
-      "cc",
+"-I/home/myrmex/opencv-3-static/include/opencv -I/home/myrmex/opencv-3-static/include",      
+"cc",
 			"cc/core",
 			"cc/modules",
 			"<!(node -e \"require('nan')\")",
 			"<!(node -e \"require('macro-inferno')\")"
 		],
 		"libraries": [
-      "-L/web/home/johnathan/opencv-3-static/lib -L/web/home/johnathan/opencv-3-static/share/OpenCV/3rdparty/lib -L/usr/local/lib -lopencv_dnn -lopencv_ml -lopencv_objdetect -lopencv_shape -lopencv_stitching -lopencv_superres -lopencv_videostab -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_imgcodecs -lopencv_video -lopencv_photo -lopencv_imgproc -lopencv_flann -lopencv_core -lz -lprotobuf -ldl -lm -lpthread -lrt",
-      "<!@(node ./lib/libs.js)"
+"-L/home/myrmex/opencv-3-static/lib64 -L/home/myrmex/opencv-3-static/share/OpenCV/3rdparty/lib64 -lopencv_dnn -lopencv_ml -lopencv_objdetect -lopencv_shape -lopencv_stitching -lopencv_superres -lopencv_videostab -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_imgcodecs -lopencv_video -lopencv_photo -lopencv_imgproc -lopencv_flann -lopencv_core -llibprotobuf -lz -ldl -lm -lpthread -lr",      
+"<!@(node ./lib/libs.js)"
 		],
 		"sources": [
 			"cc/opencv4nodejs.cc",
