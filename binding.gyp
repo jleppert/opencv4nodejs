@@ -13,7 +13,7 @@
 			"<!(node -e \"require('macro-inferno')\")"
 		],
 		"libraries": [
-      "-L/web/home/johnathan/opencv-3-static/lib -L/web/home/johnathan/opencv-3-static/share/OpenCV/3rdparty/lib -L/usr/local/lib -lopencv_dnn -lopencv_ml -lopencv_objdetect -lopencv_shape -lopencv_stitching -lopencv_superres -lopencv_videostab -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_imgcodecs -lopencv_video -lopencv_photo -lopencv_imgproc -lopencv_flann -lopencv_core -littnotify -llibwebp -lippiw -lippicv -lprotobuf -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype -lgthread-2.0 -lpng -lz -ltiff -ljasper -ljpeg -lImath -lIlmImf -lIex -lHalf -lIlmThread -ldc1394 -lavcodec-ffmpeg -lavformat-ffmpeg -lavutil-ffmpeg -lswscale-ffmpeg -ldl -lm -lpthread -lrt",
+      "-L/web/home/johnathan/opencv-3-static/lib -L/web/home/johnathan/opencv-3-static/share/OpenCV/3rdparty/lib -L/usr/local/lib -lopencv_dnn -lopencv_ml -lopencv_objdetect -lopencv_shape -lopencv_stitching -lopencv_superres -lopencv_videostab -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_imgcodecs -lopencv_video -lopencv_photo -lopencv_imgproc -lopencv_flann -lopencv_core -lz -lprotobuf -ldl -lm -lpthread -lrt",
       "<!@(node ./lib/libs.js)"
 		],
 		"sources": [
