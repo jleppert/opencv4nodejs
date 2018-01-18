@@ -1058,7 +1058,8 @@ public:
 		this->self = self;
 	}
 
-  cv::Scalar mean, stddev, variance;
+  cv::Scalar mean, stddev;
+  double variance;
 
 	const char* execute() {
 		cv::meanStdDev(self, mean, stddev, cv::Mat());
