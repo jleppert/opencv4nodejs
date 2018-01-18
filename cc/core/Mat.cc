@@ -1062,7 +1062,7 @@ public:
   double variance;
 
 	const char* execute() {
-		cv::variance(self, mean, stddev, cv::Mat());
+		cv::meanStdDev(self, mean, stddev, cv::Mat());
     variance = stddev[0] * stddev[0];
 		return "";
 	}
