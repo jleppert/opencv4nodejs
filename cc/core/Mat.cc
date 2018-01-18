@@ -1081,7 +1081,7 @@ public:
 NAN_METHOD(Mat::MeanStdDev) {
   MeanStdDevWorker worker(Mat::Converter::unwrap(info.This()));
   FF_WORKER_SYNC("Mat::MeanStdDev", worker);
-  info.getReturnValue().Set(worker.getReturnValue());
+  info.GetReturnValue().Set(worker.getReturnValue());
 }
 
 NAN_METHOD(Mat::MeanStdDevAsync) {
