@@ -1051,10 +1051,10 @@ NAN_METHOD(Mat::SumAsync) {
 	FF_WORKER_ASYNC("Mat::SumAsync", SumWorker, worker);
 }
 
-struct Mat::MeanStdWorker : public SimpleWorker {
+struct Mat::MeanStdDevWorker : public SimpleWorker {
 public:
 	cv::Mat self;
-	MeanStdWorker(cv::Mat self) {
+	MeanStdDevWorker(cv::Mat self) {
 		this->self = self;
 	}
 
@@ -1078,14 +1078,14 @@ public:
 
 
 NAN_METHOD(Mat::MeanStdDev) {
-  MeanStdWorker worker(Mat::Converter::unwrap(info.This()));
+  MeanStdDevWorker worker(Mat::Converter::unwrap(info.This()));
   FF_WORKER_SYNC("Mat::MeanStdDev", worker);
   info.getReturnValue().Set(worker.getReturnValue());
 }
 
 NAN_METHOD(Mat::MeanStdDevAsync) {
-  MeanStdWorker worker(Mat::Converter::unwrap(info.This()));
-  FF_WORKER_ASYNC("Mat::MeanStdDevAsync", MeanStdWorker, worker);
+  MeanStdDevWorker worker(Mat::Converter::unwrap(info.This()));
+  FF_WORKER_ASYNC("Mat::MeanStdDevAsync", MeanStdDevWorker, worker);
 }
 
 
