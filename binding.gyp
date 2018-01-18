@@ -5,7 +5,7 @@
 			"<!@(node ./lib/defines.js)",
 		],
 		"include_dirs" : [
-      "<!@(node ./lib/cflags.js)",
+      "-I/home/myrmex/opencv-3-static/include/opencv -I/home/myrmex/opencv-3-static/include",
       "cc",
 			"cc/core",
 			"cc/modules",
@@ -13,7 +13,7 @@
 			"<!(node -e \"require('macro-inferno')\")"
 		],
 		"libraries": [
-      "<!@(node ./lib/static-libs.js)",
+      "<!@(node ./lib/cflags.js)",
       "<!@(node ./lib/libs.js)"
 		],
 		"sources": [
