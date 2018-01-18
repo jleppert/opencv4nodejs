@@ -71,8 +71,8 @@ NAN_MODULE_INIT(Mat::Init) {
 	Nan::SetPrototypeMethod(ctor, "convertScaleAbsAsync", ConvertScaleAbsAsync);
 	Nan::SetPrototypeMethod(ctor, "sum", Sum);
 	Nan::SetPrototypeMethod(ctor, "sumAsync", SumAsync);
-  Nan::SetPrototypeMethod(ctor, "meanStdDev", MeanStdDev);
-  Nan::SetPrototypeMethod(ctor, "meanStdDevAsync", MeanStdDevAsync);
+  Nan::SetPrototypeMethod(ctor, "variance", Variance);
+  Nan::SetPrototypeMethod(ctor, "varianceAsync", VarianceAsync);
 
 #if CV_VERSION_MINOR > 1
 	Nan::SetPrototypeMethod(ctor, "rotate", Rotate);
@@ -1051,10 +1051,10 @@ NAN_METHOD(Mat::SumAsync) {
 	FF_WORKER_ASYNC("Mat::SumAsync", SumWorker, worker);
 }
 
-struct Mat::MeanStdDevWorker : public SimpleWorker {
+struct Mat::VarianceWorker : public SimpleWorker {
 public:
 	cv::Mat self;
-	MeanStdDevWorker(cv::Mat self) {
+	VarianceWorker(cv::Mat self) {
 		this->self = self;
 	}
 
@@ -1062,7 +1062,7 @@ public:
   double variance;
 
 	const char* execute() {
-		cv::meanStdDev(self, mean, stddev, cv::Mat());
+		cv::variance(self, mean, stddev, cv::Mat());
     variance = stddev[0] * stddev[0];
 		return "";
 	}
@@ -1078,15 +1078,15 @@ public:
 };
 
 
-NAN_METHOD(Mat::MeanStdDev) {
-  MeanStdDevWorker worker(Mat::Converter::unwrap(info.This()));
-  FF_WORKER_SYNC("Mat::MeanStdDev", worker);
+NAN_METHOD(Mat::Variance) {
+  VarianceWorker worker(Mat::Converter::unwrap(info.This()));
+  FF_WORKER_SYNC("Mat::Variance", worker);
   info.GetReturnValue().Set(worker.getReturnValue());
 }
 
-NAN_METHOD(Mat::MeanStdDevAsync) {
-  MeanStdDevWorker worker(Mat::Converter::unwrap(info.This()));
-  FF_WORKER_ASYNC("Mat::MeanStdDevAsync", MeanStdDevWorker, worker);
+NAN_METHOD(Mat::VarianceAsync) {
+  VarianceWorker worker(Mat::Converter::unwrap(info.This()));
+  FF_WORKER_ASYNC("Mat::VarianceAsync", VarianceWorker, worker);
 }
 
 
