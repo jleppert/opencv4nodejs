@@ -5,16 +5,16 @@
 			"<!@(node ./lib/defines.js)",
 		],
 		"include_dirs" : [
-      "-I/home/myrmex/opencv-3-static/include/opencv -I/home/myrmex/opencv-3-static/include",
-      "cc",
+			"<!(node ./lib/cflags.js)",
+			"cc",
 			"cc/core",
 			"cc/modules",
 			"<!(node -e \"require('nan')\")",
 			"<!(node -e \"require('macro-inferno')\")"
 		],
 		"libraries": [
-      "<!@(node ./lib/cflags.js)",
-      "<!@(node ./lib/libs.js)"
+      			"<!(node ./lib/static-libs.js)",
+      			"<!@(node ./lib/libs.js)"
 		],
 		"sources": [
 			"cc/opencv4nodejs.cc",

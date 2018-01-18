@@ -1,7 +1,7 @@
 {
-  "name": "opencv4nodejs",
+  "name": "opencv4nodejs-lambda",
   "version": "2.35.0",
-  "description": "Asynchronous OpenCV 3.x API for node.js",
+  "description": "Asynchronous OpenCV 3.x API for node.js, built to work on AWS lambda, forked from https://github.com/justadudewhohacks/opencv4nodejs",
   "keywords": [
     "opencv",
     "cv",
@@ -16,16 +16,16 @@
     "network",
     "async"
   ],
-  "author": "justadudewhohacks",
+  "author": "jleppert",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/justadudewhohacks/opencv4nodejs"
+    "url": "git+https://github.com/jleppert/opencv4nodejs"
   },
   "bugs": {
-    "url": "https://github.com/justadudewhohacks/opencv4nodejs/issues"
+    "url": "https://github.com/jleppert/opencv4nodejs/issues"
   },
-  "homepage": "https://github.com/justadudewhohacks/opencv4nodejs#readme",
+  "homepage": "https://github.com/jleppert/opencv4nodejs#readme",
   "main": "./lib/opencv4nodejs.js",
   "scripts": {
     "install": "node-gyp rebuild",
