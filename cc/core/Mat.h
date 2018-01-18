@@ -98,7 +98,11 @@ public:
 	static NAN_METHOD(Sum);
 	static NAN_METHOD(SumAsync);
 
-	struct ConvertScaleAbsWorker;
+	struct MeanStdWorker;
+	static NAN_METHOD(MeanStd);
+	static NAN_METHOD(MeanStdAsync);
+  
+  struct ConvertScaleAbsWorker;
 	static NAN_METHOD(ConvertScaleAbs);
 	static NAN_METHOD(ConvertScaleAbsAsync);
 
